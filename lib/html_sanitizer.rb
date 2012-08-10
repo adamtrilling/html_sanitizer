@@ -55,6 +55,9 @@ module Sanitizer
           sanitized_fields = {} if (sanitized_fields.nil?)
           self.sanitized_fields = sanitized_fields.merge(changed_fields)
         end
+
+        # if no sanitized fields have been set, make it an empty array
+        self.sanitized_fields = {} if sanitized_fields.nil?
       end
     end
   end
